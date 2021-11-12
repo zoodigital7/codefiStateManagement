@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+a {
+  color: #5c2530;
+  text-decoration: none;
+}
+// btn overides
+.btn-primary.btn-sm, .btn-outline-primary.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+.btn-primary {
+  background-color: #5c2530;
+  border: #86535e;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #86535e;
+  border: #5c2530;
+}
+.btn-primary:focus {
+  color: #fff;
+  background-color: #86535e;
+  border: #5c2530;
+  box-shadow: 0 0 0 0.25rem #5c25305d;
+}
+.btn-primary.disabled {
+  color: white;
+  background-color: grey;
+  border-color: grey;
+}
+.btn-primary:disabled {
+  background-color: #5c2530;
+  opacity: 0.5;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 1px solid #5c2530;
+  color: #5c2530;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+  color: white;
+  border: #86535e;
+  background-color: #86535e;
+}
+.btn-outline-primary:focus {
+  color: #5c2530;
+  background-color: transparent;
+  border: #5c2530;
+  box-shadow: 0 0 0 0.25rem #5c25305d;
+}
+// bg colors
+.bg-grey {
+  background: #eeeeee;
+  border: 1px solid #cecece;
+}
+
+// bordered-form
+.bordered-form {
+  max-width: 700px;
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  .form {
+    border: none;
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #666666;
+    }
+    input,
+    textarea,
+    select {
+      background-color: #eeeeee;
+      border: 1px solid #cebdc1;
+    }
+    .form-control.is-invalid {
+      border-color: #dc3545;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="!currentUser" class="col-12 mt-5 mb-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Welcome to the App! Would you like to login?</h1>
+        </div>
+        <div class="col-12 mt-5 text-center">
+          <button class="btn btn-primary" [routerLink]="['/login']">Login</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="currentUser" class="col-12 mt-5 mb-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Welcome, {{currentUser.first_name}}. You are logged in!</h1>
+        </div>
+        <div class="col-12 text-center mt-5">
+          <button class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

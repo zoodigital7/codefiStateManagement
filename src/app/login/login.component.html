@@ -1,0 +1,37 @@
+<div class="container bordered-form">
+  <div class="row">
+    <div class="col-12 mt-5 mb-4 d-inline-flex">
+      <h1 class="flex">Login</h1>
+      <p class="flex ms-auto fs-7 mt-auto">Want to go to the home page?<a class="ms-2 fs-7" [routerLink]="['/home']">Go Home</a>
+    </div>
+    <form [formGroup]="form" class="form">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <div class="input-group">
+          <input type="text" formControlName="email" class="form-control"
+            [ngClass]="hasError && f.email.errors?.required ? 'is-invalid' : ''">
+          <span class="ms-4"></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <div class="input-group">
+          <input type="password" formControlName="password" class="form-control" [type]="hidePass ? 'password' : 'text'"
+            formControlName="password" [ngClass]="hasError && f.password.errors?.required ? 'is-invalid' : ''">
+          <fa-icon (click)="hidePass = !hidePass" [icon]="hidePass ? ['fas', 'eye'] : ['fas', 'eye-slash']" size="sm"
+            class="ms-2 text-ihm">
+          </fa-icon>
+        </div>
+      </div>
+      <div class="mb-3 d-inline-flex w-100 mt-4">
+        <button class="btn btn-primary flex ps-4 pe-4" (click)="submitForm()">
+          Login
+          <fa-icon *ngIf="submitting" [icon]="['fas', 'spinner']" size="lg" spin="true" class="ms-2 text-white">
+          </fa-icon>
+        </button>
+        <a class="flex ms-auto fs-7" [routerLink]="['/forgot-password']">Forgot Password?</a>
+        <span class="ms-4"></span>
+      </div>
+    </form>
+  </div>
+</div>
