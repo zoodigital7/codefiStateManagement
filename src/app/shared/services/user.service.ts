@@ -31,6 +31,8 @@ export class UserService {
     const found = this.mockUsers.find(x => x.email === params.email && x.password === params.password)
     if (found) {
       const newUser = new User(found)
+      const token = Math.random().toString(36).slice(2)
+      this.storage.setItem('accessToken', token)
       this.storage.setItem('currentUser', newUser)
       this.currentUserSubject.next(newUser)
       return new BehaviorSubject(newUser)
