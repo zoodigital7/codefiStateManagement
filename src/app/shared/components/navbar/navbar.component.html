@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">CodefiStateManagement</a>
+    <button (click)="toggleSideNav()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item no-link" *ngIf="currentUser">
+          <p class="nav-link">Welcome, {{currentUser.name}}</p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="!currentUser">
+          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="currentUser">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="showSideNav" class="navbar-collapse my-offcanvas" [ngClass]="!showSideNav ? '' : 'show'"
+      id="navbarSupportedContent2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item small active mt-2">
+          <div class="w-100 d-inline-flex">
+            <div class="flex ms-auto mr-3 mt-2" (click)="toggleSideNav()">
+              <fa-icon [icon]="['fas', 'window-close']" size="lg" class="text-ihm"></fa-icon>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['sign-up']">
+            Sign up
+          </a>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['login']">
+            Log In
+          </a>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['shop']" routerLinkActive="active">
+            Shop Parts
+          </a>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['sell']" routerLinkActive="active">
+            Sell
+          </a>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['blog']" routerLinkActive="active">
+            Blog
+          </a>
+        </li>
+        <li class="nav-item small active mt-2">
+          <a class="nav-link text-uppercase" [routerLink]="['contact']" routerLinkActive="active">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,14 +1,14 @@
 <div class="fluid-container">
   <router-outlet></router-outlet>
 </div>
-<!-- Where your navbar would go -->
+<app-navbar></app-navbar>
 <div class="app app-container">
   <main style="min-height: 90vh;">
     <div class="fluid-container pt-md-0 pb-lg-0 pb-md-0 pb-0">
       <router-outlet></router-outlet>
     </div>
   </main>
-  <footer class="footer w-100 pb-4 pt-4 bg-dark" style="min-height: 10vh">
-    <p class="text-light">Some Footer Content here</p>
+  <footer class="footer w-100 pt-4 bg-dark" style="min-height: 10vh">
+    <app-footer></app-footer>
   </footer>
 </div>
